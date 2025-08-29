@@ -3,10 +3,10 @@ import { getImgUrl } from "../../../utils/getImgUrl";
 
 const CartItem = ({ item }) => {
   // const { dispatch } = useCart();
-  const { cartData, products, removeItemFromCart, updateCartQuantity } =
+  const {  products, removeItemFromCart, updateCartQuantity, } =
     useProduct();
   const product = products.find((p) => p.id === item.id);
-  const availableStock = product ? product.stock : 0;
+  // const availableStock = product ? product.stock : 0;
 
   // const handleRemoveFromCart = (id) => {
   //   dispatch({
@@ -17,7 +17,7 @@ const CartItem = ({ item }) => {
   // };
   return (
     <div
-      key={item.id}
+     
       className="flex items-start space-x-4 pb-4 border-b border-gray-200 mb-4"
     >
       <div className="w-16 h-16 bg-gray-100 rounded flex-shrink-0 flex items-center justify-center">
@@ -31,18 +31,27 @@ const CartItem = ({ item }) => {
       <div className="flex-grow">
         <div className="flex justify-between">
           <h3 className="font-medium">{item?.title}</h3>
+          {/* remove cart item from cart  */}
           <span
             className="text-red-500 text-sm cursor-pointer"
             // onClick={() => handleRemoveFromCart(item?.id)}
-            onClick={() => removeItemFromCart(item?.id)}
+            onClick={() => removeItemFromCart(item?.cartId)}
           >
             ×
           </span>
         </div>
         <p className="text-sm text-gray-500">
-          Size: {item.sizes.map((size) => size)}
+          Size: {item?.size}
         </p>
-        <p className="text-sm text-gray-500">Color: White</p>
+        <div className="flex gap-2 items-center">
+          <p className="text-sm text-gray-500">Color:</p>
+        <span>{item.color}</span> 
+         <div 
+            className="w-4 h-4 rounded-full border border-gray-300" 
+            style={{ backgroundColor: item.colorValue }}
+            title={item.color}
+          ></div>
+          </div>
         <div className="flex justify-between items-center mt-2">
           <div>
             <p className="text-sm font-medium">
@@ -55,15 +64,15 @@ const CartItem = ({ item }) => {
           <div className="flex items-center space-x-2">
             <button
               className="w-6 h-6 bg-gray-100 rounded flex items-center justify-center"
-              onClick={() => updateCartQuantity(item.id, item.quantity - 1)}
+              onClick={() => updateCartQuantity(item.cartId, item.quantity - 1)}
             >
               −
             </button>
             <span className="text-sm">{item?.quantity}</span>
             <button
-              onClick={() => updateCartQuantity(item.id, item.quantity + 1)}
-              disabled={availableStock <= 0}
-              className="w-6 h-6 bg-gray-100 rounded flex items-center justify-center disabled:bg-gray-700 disabled:text-gray-400 disabled:cursor-not-allowed "
+              onClick={() => updateCartQuantity(item.cartId, item.quantity + 1)}
+              // disabled={product.stock <= 0}
+              className={`w-6 h-6  rounded flex items-center justify-center ${product.stock <= 0 ?"cursor-not-allowed bg-gray-700 text-gray-400" : "bg-gray-100 hover:bg-gray-400"} `}
             >
               +
             </button>

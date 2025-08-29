@@ -12,8 +12,10 @@ const ProductContent = () => {
   const [showFilter, setShowFilter] = useState(false);
   const [category, setCategory] = useState([]);
   const [filterProducts, setFilterProducts] = useState([]);
-  const { products, debouncedSearchTerm, sortType, setSortType, searchTerm } = useProduct();
-  
+  const { products, debouncedSearchTerm, sortType, setSortType, searchTerm, message } = useProduct();
+   {/* Message Display */}
+
+      
   const toggleCategory = (e) => {
     // if select the same which was already StylePropertyMapReadOnly, then remove and render all products
     if (category.includes(e.target.value)) {
@@ -105,7 +107,17 @@ const ProductContent = () => {
   //   )
     // ?.sort(sortProducts);
   return (
+    
     <main className="container mx-auto px-4 md:px-8 py-8">
+      {/* {message && (
+        <div className={`fixed top-20 right-4 z-50 p-4 rounded-md shadow-lg ${
+          message.type === 'success' 
+            ? 'bg-green-100 text-green-800 border border-green-200' 
+            : 'bg-red-100 text-red-800 border border-red-200'
+        }`}>
+          {message.text}
+        </div>
+      )} */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* <!-- Products Section (2/3 width on large screens) --> */}
         <div className="lg:col-span-2">

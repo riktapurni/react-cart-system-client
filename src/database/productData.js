@@ -12,6 +12,12 @@ export const initialProducts = [
 },
 "stock": 0,
 sizes: ["S", "M", "L", "XL"],
+ colors: [
+        { name: 'Black', value: '#000000' },
+        { name: 'White', value: '#FFFFFF' },
+        { name: 'Navy', value: '#1F2937' },
+        { name: 'Red', value: '#EF4444' }
+      ]
 },
  {
       "id": 2,
@@ -26,6 +32,11 @@ sizes: ["S", "M", "L", "XL"],
       },
       "stock": 2, // Changed stock for testing
       sizes: ["S", "M", "L", "XL"],
+      colors: [
+        { name: 'Dark Blue', value: '#1E3A8A' },
+        { name: 'Light Blue', value: '#3B82F6' },
+        { name: 'Black', value: '#000000' }
+      ]
     },
 {
 "id": 3,
@@ -39,6 +50,13 @@ sizes: ["S", "M", "L", "XL"],
 "count": 500
 },
 sizes: ["S", "M", "L", "XL"],
+colors: [
+        { name: 'White', value: '#FFFFFF' },
+        { name: 'Black', value: '#000000' },
+        { name: 'Red', value: '#EF4444' },
+        { name: 'Blue', value: '#3B82F6' },
+        { name: 'Green', value: '#10B981' }
+      ],
 "stock": 3
 },
 {
@@ -53,6 +71,11 @@ sizes: ["S", "M", "L", "XL"],
 "count": 430
 },
 sizes: ["S", "M", "L", "XL"],
+colors: [
+        { name: 'Dark Blue', value: '#1E3A8A' },
+        { name: 'Light Blue', value: '#3B82F6' },
+        { name: 'Black', value: '#000000' }
+      ],
 "stock": 30
 },
 {
@@ -67,6 +90,7 @@ sizes: ["S", "M", "L", "XL"],
 "count": 400
 },
 sizes: ["S", "M", "L", "XL"],
+ colors: ["#D2691E", "#FF4500", "#C19A6B"], // Chocolate, OrangeRed, Camel
 "stock": 70
 },
 {
@@ -81,6 +105,7 @@ sizes: ["S", "M", "L", "XL"],
 "count": 70
 },
 sizes: ["S", "M", "L", "XL"],
+colors: ["#8B4513", "#4A2D1F", "#F5F5DC"], // SaddleBrown, a darker brown, Beige
 "stock": 70
 },
 {
@@ -95,6 +120,7 @@ sizes: ["S", "M", "L", "XL"],
 "count": 400
 },
 sizes: ["S", "M", "L", "XL"],
+colors: ["#E6E6FA", "#FFFFE0", "#D2B48C"], // Lavender, LightYellow, Tan
 "stock": 140
 },
 {
@@ -109,6 +135,7 @@ sizes: ["S", "M", "L", "XL"],
 "count": 100
 },
 sizes: ["S", "M", "L", "XL"],
+colors: ["#5D4037", "#9E6032"], // Using hex codes for more specific colors
 "stock": 14
 },
 {
@@ -123,6 +150,7 @@ sizes: ["S", "M", "L", "XL"],
 "count": 203
 },
 sizes: ["S", "M", "L", "XL"],
+colors: ["#E6E6FA", "#FFFFE0", "#D2B48C"], // Lavender, LightYellow, Tan
 "stock": 14,
 },
 {
@@ -165,8 +193,20 @@ sizes: ["S", "M", "L", "XL"],
 "count": 400
 },
 sizes: ["S", "M", "L", "XL"],
+colors: ["#E6E6FA", "#FFFFE0", "#D2B48C"], // Lavender, LightYellow, Tan
 "stock": 14,
 },
+{ "id": 13, 
+      "title": 'Smartphone Case', 
+      "price": 24.99, 
+      "stock": 14,
+      "sizes": ['iPhone 14', 'iPhone 15', 'Samsung S24'],
+      "rating": {
+"rate": 4.8,
+"count": 400
+},
+      "image": 'https://images.unsplash.com/photo-1601593346740-925612772716?w=300&h=200&fit=crop' 
+    }
 // {
 // "id": 13,
 // "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",

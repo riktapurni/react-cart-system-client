@@ -36,6 +36,7 @@ const navBaraLinks = links?.map((link) => (<a href="#" key={link?.name}className
         
       </nav>
   )
+  
 }
 
 export default Navbar

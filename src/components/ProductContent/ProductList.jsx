@@ -2,9 +2,12 @@ import React from 'react'
 // import { products } from '../../database/productData'
 import ProductCard from './ProductCard'
 import noProductImg from "../../assets/img/no-product-found.png"
+import useProduct from '../../hooks/useProduct'
 const ProductList = ({products}) => {
+ 
   return (
     <div class="product-grid">
+       
           {products.map((product) => (
   <ProductCard key={product.id} product={product}/>
           ))}
